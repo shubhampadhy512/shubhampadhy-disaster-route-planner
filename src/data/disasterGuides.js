@@ -1,0 +1,51 @@
+export const DISASTER_GUIDES = [
+  {
+    id: 'flood',
+    title: 'Flood',
+    icon: 'fa-house-flood-water',
+    action: 'Move to higher ground and follow evacuation instructions. Take your go-bag and avoid contact with floodwater.',
+    avoid: 'Never walk, swim, or drive through floodwater. Water may be deeper or faster than it appears.',
+  },
+  {
+    id: 'cyclone',
+    title: 'Cyclone',
+    icon: 'fa-wind',
+    action: 'Stay indoors in a sturdy shelter, away from windows. Keep listening for official warnings and evacuation updates.',
+    avoid: 'Do not go outside during the storm or assume the danger has passed during a brief lull.',
+  },
+  {
+    id: 'earthquake',
+    title: 'Earthquake',
+    icon: 'fa-house-crack',
+    action: 'Drop, Cover, and Hold On. Protect your head and neck; if indoors, stay inside until the shaking stops.',
+    avoid: 'Do not use elevators or run outside while the ground is shaking. Expect aftershocks.',
+  },
+  {
+    id: 'fire',
+    title: 'Fire',
+    icon: 'fa-fire',
+    action: 'Leave immediately using the safest exit, stay low under smoke, and call emergency services from a safe place.',
+    avoid: 'Do not stop to collect belongings or re-enter a burning building.',
+  },
+  {
+    id: 'landslide',
+    title: 'Landslide',
+    icon: 'fa-mountain-sun',
+    action: 'Move away from the slide path and toward stable ground. Report danger signs to local authorities.',
+    avoid: 'Do not cross an active slide area or return until officials say it is safe.',
+  },
+  {
+    id: 'tsunami',
+    title: 'Tsunami',
+    icon: 'fa-water',
+    action: 'If you are near the coast and feel a strong or long earthquake, move inland or to high ground immediately.',
+    avoid: 'Do not go to the shore to watch the water. Stay away until officials give the all-clear.',
+  },
+  {
+    id: 'heatwave',
+    title: 'Heatwave',
+    icon: 'fa-temperature-high',
+    action: 'Stay in a cool place, drink water regularly, and check on older adults, children, and anyone at higher risk.',
+    avoid: 'Avoid strenuous activity during the hottest hours. Seek urgent help for confusion, fainting, or severe illness.',
+  },
+];

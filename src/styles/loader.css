@@ -1,0 +1,114 @@
+    /* Ring Loader Styles */
+    .ring-loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.75s ease, visibility 0.75s ease;
+    }
+
+    .ring-loader-wrapper.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Light Mode Loader */
+    .light-mode .ring-loader-wrapper {
+        background-color: #f0f4f8;
+    }
+
+    /* Dark Mode Loader */
+    .dark-mode .ring-loader-wrapper {
+        background-color: #0d1117;
+    }
+
+    .dark-mode .loading-text {
+        color: #e2e8f0;
+    }
+
+
+    .loader-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .loading-text {
+        color: #4A5568;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+    }
+
+    .ring {
+        width: 190px;
+        height: 190px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .ring:nth-child(1) {
+        border-bottom: 8px solid rgb(240, 42, 230);
+        animation: rotate1 2s linear infinite;
+    }
+
+    @keyframes rotate1 {
+        from {
+            transform: rotateX(50deg) rotateZ(110deg);
+        }
+
+        to {
+            transform: rotateX(50deg) rotateZ(470deg);
+        }
+    }
+
+    .ring:nth-child(2) {
+        border-bottom: 8px solid rgb(240, 19, 67);
+        animation: rotate2 2s linear infinite;
+    }
+
+    @keyframes rotate2 {
+        from {
+            transform: rotateX(20deg) rotateY(50deg) rotateZ(20deg);
+        }
+
+        to {
+            transform: rotateX(20deg) rotateY(50deg) rotateZ(380deg);
+        }
+    }
+
+    .ring:nth-child(3) {
+        border-bottom: 8px solid rgb(3, 170, 170);
+        animation: rotate3 2s linear infinite;
+    }
+
+    @keyframes rotate3 {
+        from {
+            transform: rotateX(40deg) rotateY(130deg) rotateZ(450deg);
+        }
+
+        to {
+            transform: rotateX(40deg) rotateY(130deg) rotateZ(90deg);
+        }
+    }
+
+    .ring:nth-child(4) {
+        border-bottom: 8px solid rgb(207, 135, 1);
+        animation: rotate4 2s linear infinite;
+    }
+
+    @keyframes rotate4 {
+        from {
+            transform: rotateX(70deg) rotateZ(270deg);
+        }
+
+        to {
+            transform: rotateX(70deg) rotateZ(630deg);
+        }
+    }

@@ -1,0 +1,51 @@
+.toolkit-page,
+.news-page,
+.support-page {
+  --page-accent: #167c74;
+  --page-accent-soft: rgba(22, 124, 116, 0.1);
+  --page-surface: var(--section-bg);
+  --page-border: var(--border-color);
+  --page-text: var(--text-primary);
+  --page-muted: var(--text-secondary);
+  --page-shadow: 0 16px 42px rgba(14, 33, 54, 0.08);
+  color: var(--page-text);
+  font-family: 'DM Sans', 'Roboto', sans-serif;
+}
+
+.page-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+  color: var(--page-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.page-eyebrow i {
+  font-size: 0.9rem;
+}
+
+.toolkit-hero h1,
+.news-hero h1,
+.support-hero h1 {
+  margin: 0;
+  color: var(--page-text);
+  font-family: 'Manrope', 'DM Sans', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+
+.toolkit-hero-copy > p:last-child,
+.news-hero-copy > p:last-child,
+.support-hero-copy > p:last-child {
+  max-width: 650px;
+  margin: 1rem 0 0;
+  color: var(--page-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}

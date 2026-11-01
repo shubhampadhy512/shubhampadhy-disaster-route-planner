@@ -1,0 +1,291 @@
+.toolkit-page {
+  --page-accent: #167c74;
+  --page-accent-soft: rgba(22, 124, 116, 0.1);
+  padding: 2rem clamp(1rem, 4vw, 3.5rem) 4rem;
+}
+
+.toolkit-wrap {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.toolkit-hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid var(--page-border);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 90% 15%, var(--page-accent-soft), transparent 34%),
+    var(--page-surface);
+  box-shadow: var(--page-shadow);
+}
+
+.toolkit-hero-copy {
+  max-width: 700px;
+}
+
+.toolkit-hero-mark {
+  display: grid;
+  width: clamp(90px, 12vw, 138px);
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 35%;
+  background: var(--page-accent);
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  box-shadow: 0 16px 32px rgba(22, 124, 116, 0.22);
+  transform: rotate(4deg);
+}
+
+.toolkit-section {
+  margin-top: 2.75rem;
+}
+
+.toolkit-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.toolkit-section-heading h2 {
+  margin: 0;
+  color: var(--page-text);
+  font-family: 'Manrope', 'DM Sans', sans-serif;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  letter-spacing: -0.035em;
+}
+
+.toolkit-section-heading p {
+  margin: 0.45rem 0 0;
+  color: var(--page-muted);
+  line-height: 1.6;
+}
+
+.toolkit-kit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.toolkit-kit-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-height: 128px;
+  padding: 1.35rem;
+  border: 1px solid var(--page-border);
+  border-radius: 16px;
+  background: var(--page-surface);
+  box-shadow: var(--page-shadow);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.toolkit-kit-card:hover {
+  border-color: var(--page-accent);
+  transform: translateY(-3px);
+}
+
+.toolkit-kit-icon {
+  display: grid;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--page-accent-soft);
+  color: var(--page-accent);
+  font-size: 1.1rem;
+}
+
+.toolkit-kit-card h3 {
+  margin: 0 0 0.4rem;
+  color: var(--page-text);
+  font-family: 'Manrope', 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.toolkit-kit-card p {
+  margin: 0;
+  color: var(--page-muted);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.toolkit-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--page-border);
+  border-left: 4px solid var(--page-accent);
+  border-radius: 12px;
+  background: var(--page-surface);
+  color: var(--page-muted);
+  line-height: 1.6;
+}
+
+.toolkit-note i {
+  margin-top: 0.2rem;
+  color: var(--page-accent);
+}
+
+.toolkit-disaster-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.toolkit-disaster-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--page-border);
+  border-radius: 999px;
+  background: var(--page-surface);
+  color: var(--page-muted);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.toolkit-disaster-button:hover,
+.toolkit-disaster-button.active {
+  border-color: var(--page-accent);
+  background: var(--page-accent-soft);
+  color: var(--page-accent);
+}
+
+.toolkit-disaster-button:focus-visible {
+  outline: 3px solid var(--page-accent-soft);
+  outline-offset: 2px;
+}
+
+.toolkit-safety-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.toolkit-safety-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--page-border);
+  border-radius: 16px;
+  background: var(--page-surface);
+  box-shadow: var(--page-shadow);
+}
+
+.toolkit-safety-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.toolkit-safety-title .toolkit-kit-icon {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+}
+
+.toolkit-safety-title h3 {
+  margin: 0;
+  color: var(--page-text);
+  font-family: 'Manrope', 'DM Sans', sans-serif;
+  font-size: 1.08rem;
+}
+
+.toolkit-safety-detail {
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--page-accent);
+}
+
+.toolkit-safety-detail strong {
+  color: var(--page-text);
+  font-size: 0.82rem;
+}
+
+.toolkit-safety-detail p {
+  margin: 0.3rem 0 0;
+  color: var(--page-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.toolkit-safety-avoid {
+  border-color: #bd633c;
+}
+
+.toolkit-safety-avoid strong {
+  color: #bd633c;
+}
+
+.toolkit-emergency-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--page-border);
+  border-radius: 14px;
+  background: var(--page-accent-soft);
+  color: var(--page-text);
+}
+
+.toolkit-emergency-callout > i {
+  margin-top: 0.2rem;
+  color: var(--page-accent);
+  font-size: 1.2rem;
+}
+
+.toolkit-emergency-callout p {
+  margin: 0;
+  color: var(--page-muted);
+  line-height: 1.65;
+}
+
+.toolkit-emergency-callout strong {
+  color: var(--page-text);
+}
+
+@media (max-width: 680px) {
+  .toolkit-page {
+    padding-top: 1rem;
+  }
+
+  .toolkit-hero {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    border-radius: 18px;
+  }
+
+  .toolkit-hero-mark {
+    width: 76px;
+    font-size: 2.25rem;
+  }
+
+  .toolkit-kit-grid,
+  .toolkit-safety-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toolkit-kit-card,
+  .toolkit-disaster-button {
+    transition: none;
+  }
+}
