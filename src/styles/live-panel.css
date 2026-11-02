@@ -1,0 +1,137 @@
+/* Styles for the live alerts and shelters panels.
+   They inherit fonts and colours from your existing site styles. */
+
+.live-panel .live-meta {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.live-panel .live-note {
+  margin: 8px 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.live-panel .live-warn {
+  margin: 8px 0;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  color: #3b2300;
+  background: #fff4e5;
+  border-left: 4px solid #c2570c;
+}
+
+/* Alerts */
+.live-alerts,
+.live-shelters {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.live-alerts {
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.live-alerts li {
+  margin-bottom: 8px;
+  padding: 9px 10px;
+  color: #1b2430;
+  background: #fff;
+  border: 1px solid #d9ddd8;
+  border-left-width: 5px;
+}
+
+.live-alerts .sev-extreme { border-left-color: #b42318; }
+.live-alerts .sev-severe { border-left-color: #c2570c; }
+.live-alerts .sev-moderate { border-left-color: #a16207; }
+.live-alerts .sev-minor,
+.live-alerts .sev-unknown { border-left-color: #475569; }
+
+.live-alert-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.live-chip {
+  flex: none;
+  padding: 1px 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #fff;
+  background: #475569;
+  border-radius: 999px;
+}
+.sev-extreme .live-chip { background: #b42318; }
+.sev-severe .live-chip { background: #c2570c; }
+.sev-moderate .live-chip { background: #a16207; }
+
+.live-alerts li .live-meta {
+  color: #5b6672;
+  opacity: 1;
+}
+
+.live-alerts .live-empty {
+  border: 0;
+  background: none;
+  color: inherit;
+}
+
+.live-link-button {
+  margin: 4px 0 10px;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Shelters */
+.live-shelters button {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 9px 10px;
+  font: inherit;
+  text-align: left;
+  color: #1b2430;
+  background: #fff;
+  border: 1px solid #d9ddd8;
+  cursor: pointer;
+}
+
+.live-shelters button:hover {
+  border-color: #2f7d4f;
+}
+
+.live-shelters button.is-selected {
+  border-color: #2f7d4f;
+  box-shadow: inset 4px 0 0 #2f7d4f;
+}
+
+.live-shelters button .live-meta,
+.live-shelters button .live-meta {
+  color: #5b6672;
+  opacity: 1;
+}
+
+.live-panel button:focus-visible {
+  outline: 3px solid #1f6f8b;
+  outline-offset: 2px;
+}
+
+.live-route {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  font-weight: 600;
+  color: #12323f;
+  background: #e7f2f6;
+  border-left: 4px solid #1f6f8b;
+}

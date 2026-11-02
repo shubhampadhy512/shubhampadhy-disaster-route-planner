@@ -1,0 +1,22 @@
+[
+    {
+        "state": "odisha",
+        "file": "/shelters/odisha.geojson",
+        "bbox": [
+            81.3,
+            17.8,
+            87.5,
+            22.6
+        ]
+    },
+    {
+        "state": "andhra_coast",
+        "file": "/shelters/andhra_coast.geojson",
+        "bbox": [
+            79.5,
+            13.5,
+            82.5,
+            17.0
+        ]
+    }
+]

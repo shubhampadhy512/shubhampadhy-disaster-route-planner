@@ -1,0 +1,214 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    85.8059861,
+                    20.2419434
+                ]
+            },
+            "properties": {
+                "id": "osm-node-7760181478",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "state": "odisha",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    85.8273623,
+                    19.7966523
+                ]
+            },
+            "properties": {
+                "id": "osm-node-8073270483",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "state": "odisha",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    84.7851638,
+                    19.314796
+                ]
+            },
+            "properties": {
+                "id": "osm-way-246407302",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "state": "odisha",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    84.9852997,
+                    19.3494579
+                ]
+            },
+            "properties": {
+                "id": "osm-way-782208492",
+                "name": "Cycle Parking",
+                "type": "shelter",
+                "state": "odisha",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    84.9852139,
+                    19.3494827
+                ]
+            },
+            "properties": {
+                "id": "osm-way-782208493",
+                "name": "Cycle Parking",
+                "type": "shelter",
+                "state": "odisha",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    84.8993738,
+                    19.4887578
+                ]
+            },
+            "properties": {
+                "id": "osm-way-783425622",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "state": "odisha",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    84.8994277,
+                    19.4885439
+                ]
+            },
+            "properties": {
+                "id": "osm-way-783425637",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "state": "odisha",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    84.9794229,
+                    19.353612
+                ]
+            },
+            "properties": {
+                "id": "osm-way-784003649",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "state": "odisha",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    85.0120433,
+                    19.3623026
+                ]
+            },
+            "properties": {
+                "id": "osm-way-892777535",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "state": "odisha",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    85.0064706,
+                    19.3596873
+                ]
+            },
+            "properties": {
+                "id": "osm-way-983797592",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "state": "odisha",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    85.7890072,
+                    20.2586908
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1523431333",
+                "name": "Mo Bus Stop",
+                "type": "shelter",
+                "state": "odisha",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        }
+    ]
+}
