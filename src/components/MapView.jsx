@@ -53,6 +53,48 @@ function bboxCenter(geom) {
   return [(s + n) / 2, (w + e) / 2];
 }
 
+// NEW: legend panel that sits on the map (bottom-left). Click "Map symbols" to open or close it.
+const lgDot = (bg, size, content = '') =>
+  `<span style="display:inline-flex;align-items:center;justify-content:center;width:${size}px;height:${size}px;` +
+  `border-radius:50%;background:${bg};border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.35);` +
+  `font-size:12px;line-height:1;">${content}</span>`;
+const lgLine = (dashed) =>
+  `<span style="display:inline-block;width:30px;border-top:4px ${dashed ? 'dashed' : 'solid'} #1f6f8b;"></span>`;
+
+const LEGEND_ROWS = [
+  ['Alerts (click a symbol for details)'],
+  [lgDot('#ca8a04', 22, '\u{1F300}'), 'Cyclone'],
+  [lgDot('#ca8a04', 22, '\u{1F30A}'), 'Storm surge, high waves, flood'],
+  [lgDot('#ca8a04', 22, '\u26A1'), 'Lightning, thunderstorm'],
+  [lgDot('#ca8a04', 22, '\u{1F327}\uFE0F'), 'Rain'],
+  [lgDot('#ca8a04', 22, '\u{1F4A8}'), 'Strong wind'],
+  [lgDot('#ca8a04', 22, '\u26A0\uFE0F'), 'Other alert'],
+  [lgDot('#b91c1c', 16), 'Red: Extreme severity'],
+  [lgDot('#ea580c', 16), 'Orange: Severe'],
+  [lgDot('#ca8a04', 16), 'Yellow: Moderate'],
+  [lgDot('#2563eb', 16), 'Blue: other / unknown'],
+  ['Shelters and routes'],
+  [lgDot('#2f7d4f', 14), 'Shelter (unverified, incomplete)'],
+  [lgDot('#2f7d4f', 22), 'Selected shelter'],
+  [lgLine(false), 'Road route to selected shelter'],
+  [lgLine(true), 'Direction only, no road route'],
+  ['You'],
+  ['\u{1F4CD}', 'Your location (if you allow access)'],
+];
+
+const LEGEND_HTML =
+  `<details open style="background:#fff;color:#1f2937;border-radius:8px;box-shadow:0 1px 6px rgba(0,0,0,.4);` +
+  `font:13px/1.3 system-ui,sans-serif;max-width:270px;">` +
+  `<summary style="cursor:pointer;padding:8px 12px;font-weight:700;">Map symbols</summary>` +
+  `<div style="max-height:230px;overflow-y:auto;padding:0 12px 10px;">` +
+  `<table style="border-collapse:collapse;width:100%;">` +
+  LEGEND_ROWS.map((r) =>
+    r.length === 1
+      ? `<tr><td colspan="2" style="padding:8px 0 3px;font-weight:700;border-top:1px solid #d1d5db;">${r[0]}</td></tr>`
+      : `<tr><td style="padding:3px 8px 3px 0;width:34px;">${r[0]}</td><td style="padding:3px 0;">${r[1]}</td></tr>`
+  ).join('') +
+  `</table></div></details>`;
+
 /**
  * Props
  *  location        { lat, lon } or null          (the user's position)
@@ -102,6 +144,17 @@ export default function MapView({
     shelterLayerRef.current = L.layerGroup().addTo(map);
     routeLayerRef.current = L.layerGroup().addTo(map);
     mapRef.current = map;
+
+    // NEW: legend on the map
+    const legend = L.control({ position: 'bottomleft' });
+    legend.onAdd = () => {
+      const div = L.DomUtil.create('div');
+      div.innerHTML = LEGEND_HTML;
+      L.DomEvent.disableClickPropagation(div);
+      L.DomEvent.disableScrollPropagation(div);
+      return div;
+    };
+    legend.addTo(map);
 
     return () => {
       map.remove();

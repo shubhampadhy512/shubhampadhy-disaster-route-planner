@@ -56,7 +56,17 @@ const ROWS = [
 
 export default function MapLegend() {
     return (
-        <div style={{ marginTop: 16, overflowX: 'auto' }}>
+        <div
+            id="map-legend"
+            style={{
+                marginTop: 16,
+                padding: 16,
+                overflowX: 'auto',
+                border: '1px solid rgba(128,128,128,.4)',
+                borderRadius: 8,
+                clear: 'both',
+            }}
+        >
             <h3 style={{ margin: '0 0 8px' }}>Map symbols</h3>
             <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '0.95rem' }}>
                 <thead>

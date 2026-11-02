@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import WeatherCard from '../components/WeatherCard.jsx';
 import MapView from '../components/MapView.jsx';
-import MapLegend from '../components/MapLegend.jsx';
 import { nearestShelters } from '../utils/geo.js';
 import { loadAllShelters, withinKm } from '../utils/shelterLoader.js'; // CHANGED
 import locationImage from '../assets/location_image.jpg';
@@ -340,8 +339,8 @@ export default function Home() {
                   <i className="fas fa-location-dot" aria-hidden="true"></i>
                   <span>Your location only appears here when you allow browser access.</span>
                 </div>
-                <MapLegend />
               </div>
+
             </main>
           </div>
 
