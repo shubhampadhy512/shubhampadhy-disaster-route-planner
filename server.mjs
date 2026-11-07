@@ -18,6 +18,70 @@ const TTL_MS = 5 * 60 * 1000;
 const MAX_ALERTS = 40;
 const BATCH = 10;
 const DISTRICT_FILE = "./districts.geojson"; // optional, see README notes
+const STATE_CENTROIDS = [
+    { name: "Andhra Pradesh", aliases: ["Andhra Pradesh"], coordinates: [79.74, 15.91] },
+    { name: "Arunachal Pradesh", aliases: ["Arunachal Pradesh"], coordinates: [94.73, 28.22] },
+    { name: "Assam", aliases: ["Assam"], coordinates: [92.94, 26.2] },
+    { name: "Bihar", aliases: ["Bihar"], coordinates: [85.31, 25.64] },
+    { name: "Chhattisgarh", aliases: ["Chhattisgarh"], coordinates: [81.87, 21.28] },
+    { name: "Goa", aliases: ["Goa"], coordinates: [74.12, 15.3] },
+    { name: "Gujarat", aliases: ["Gujarat"], coordinates: [71.19, 22.26] },
+    { name: "Haryana", aliases: ["Haryana"], coordinates: [76.08, 29.06] },
+    { name: "Himachal Pradesh", aliases: ["Himachal Pradesh"], coordinates: [77.17, 31.1] },
+    { name: "Jharkhand", aliases: ["Jharkhand"], coordinates: [85.28, 23.61] },
+    { name: "Karnataka", aliases: ["Karnataka"], coordinates: [75.71, 15.32] },
+    { name: "Kerala", aliases: ["Kerala"], coordinates: [76.27, 10.85] },
+    { name: "Madhya Pradesh", aliases: ["Madhya Pradesh"], coordinates: [78.66, 22.97] },
+    { name: "Maharashtra", aliases: ["Maharashtra"], coordinates: [75.71, 19.75] },
+    { name: "Manipur", aliases: ["Manipur"], coordinates: [93.91, 24.66] },
+    { name: "Meghalaya", aliases: ["Meghalaya"], coordinates: [91.37, 25.47] },
+    { name: "Mizoram", aliases: ["Mizoram"], coordinates: [92.94, 23.16] },
+    { name: "Nagaland", aliases: ["Nagaland"], coordinates: [94.56, 26.16] },
+    { name: "Odisha", aliases: ["Odisha", "Orissa"], coordinates: [85.09, 20.95] },
+    { name: "Punjab", aliases: ["Punjab"], coordinates: [75.34, 31.15] },
+    { name: "Rajasthan", aliases: ["Rajasthan"], coordinates: [74.22, 27.02] },
+    { name: "Sikkim", aliases: ["Sikkim"], coordinates: [88.51, 27.53] },
+    { name: "Tamil Nadu", aliases: ["Tamil Nadu"], coordinates: [78.66, 11.13] },
+    { name: "Telangana", aliases: ["Telangana"], coordinates: [79.02, 18.11] },
+    { name: "Tripura", aliases: ["Tripura"], coordinates: [91.99, 23.94] },
+    { name: "Uttar Pradesh", aliases: ["Uttar Pradesh"], coordinates: [80.95, 26.85] },
+    { name: "Uttarakhand", aliases: ["Uttarakhand", "Uttaranchal"], coordinates: [79.02, 30.07] },
+    { name: "West Bengal", aliases: ["West Bengal"], coordinates: [87.85, 22.99] },
+    { name: "Andaman and Nicobar Islands", aliases: ["Andaman and Nicobar Islands"], coordinates: [92.65, 11.74] },
+    { name: "Chandigarh", aliases: ["Chandigarh"], coordinates: [76.77, 30.73] },
+    { name: "Dadra and Nagar Haveli and Daman and Diu", aliases: ["Dadra and Nagar Haveli and Daman and Diu", "Dadra Nagar Haveli and Daman Diu"], coordinates: [72.96, 20.18] },
+    { name: "Delhi", aliases: ["Delhi", "NCT of Delhi"], coordinates: [77.1, 28.7] },
+    { name: "Jammu and Kashmir", aliases: ["Jammu and Kashmir", "Jammu Kashmir"], coordinates: [76.5, 33.27] },
+    { name: "Ladakh", aliases: ["Ladakh"], coordinates: [77.57, 34.15] },
+    { name: "Lakshadweep", aliases: ["Lakshadweep"], coordinates: [72.64, 10.57] },
+    { name: "Puducherry", aliases: ["Puducherry", "Pondicherry"], coordinates: [79.8, 11.94] },
+];
+const normalizeStateName = (value) => String(value || "").toLowerCase().replace(/[^a-z]+/g, " ").trim();
+const STATE_ALIASES = STATE_CENTROIDS.flatMap((state) =>
+    state.aliases.map((alias) => ({ state, alias: normalizeStateName(alias) }))
+).sort((a, b) => b.alias.length - a.alias.length);
+
+function approximateStateFeature(alert) {
+    const locationText = normalizeStateName([alert.sender, ...(alert.areas || [])].join(" "));
+    const match = STATE_ALIASES.find(({ alias }) => ` ${locationText} `.includes(` ${alias} `));
+    if (!match) return [];
+
+    return [{
+        type: "Feature",
+        properties: {
+            id: alert.id,
+            event: alert.event,
+            severity: alert.severity,
+            areaDesc: (alert.areas || []).join(", "),
+            headline: alert.headline,
+            expires: alert.expires,
+            sender: alert.sender,
+            approximate: true,
+            locationName: match.state.name,
+        },
+        geometry: { type: "Point", coordinates: match.state.coordinates },
+    }];
+}
 
 const first = (xml, re) =>
     (xml.match(re) || [])[1]?.replace(/<!\[CDATA\[|\]\]>/g, "").trim() ?? null;
@@ -167,6 +231,7 @@ async function parseCap(url) {
         sourceUrl: url,
     };
     alert.features = await loadGeometry(alert, xml);
+    if (!alert.features.length) alert.features = approximateStateFeature(alert);
     return alert;
 }
 
@@ -243,7 +308,8 @@ http
                     count: r.alerts.length,
                     alerts: r.alerts.map(({ features, ...rest }) => ({
                         ...rest,
-                        hasShape: features.length > 0,
+                        hasShape: features.some((feature) => !feature.properties?.approximate),
+                        hasApproximateLocation: features.some((feature) => feature.properties?.approximate),
                     })),
                     geojson: {
                         type: "FeatureCollection",

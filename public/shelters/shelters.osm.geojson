@@ -1,0 +1,1319 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2597488,
+                    17.743137
+                ]
+            },
+            "properties": {
+                "id": "osm-node-12281623288",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2998551,
+                    17.7364577
+                ]
+            },
+            "properties": {
+                "id": "osm-node-13109119819",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3441111,
+                    17.7479091
+                ]
+            },
+            "properties": {
+                "id": "osm-node-13261867696",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2998027,
+                    17.7270434
+                ]
+            },
+            "properties": {
+                "id": "osm-node-13316889177",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.299461,
+                    17.7313562
+                ]
+            },
+            "properties": {
+                "id": "osm-node-13316892852",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.1974403,
+                    17.7201602
+                ]
+            },
+            "properties": {
+                "id": "osm-node-14045508950",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2916246,
+                    17.7210965
+                ]
+            },
+            "properties": {
+                "id": "osm-node-14067598373",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3505042,
+                    17.8204222
+                ]
+            },
+            "properties": {
+                "id": "osm-way-839774003",
+                "name": "Rickshaw Colony",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.4157687,
+                    17.8556241
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1087472059",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.4158733,
+                    17.8556636
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1087472060",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2235584,
+                    17.728876
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1088328804",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.186592,
+                    17.8910432
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1233292935",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2439067,
+                    17.740959
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1234588684",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2495703,
+                    17.7404304
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1234588685",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2495231,
+                    17.7403061
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1234588686",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2564526,
+                    17.7389639
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1234588687",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2570025,
+                    17.7389483
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1234588688",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2638297,
+                    17.7368164
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1234588689",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2654184,
+                    17.7362891
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1234588690",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2047745,
+                    17.8226552
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1247537846",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2048497,
+                    17.8229278
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1247537847",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2164719,
+                    17.7751147
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1247537959",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2163613,
+                    17.7770873
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1247537969",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2193259,
+                    17.7750574
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1247537978",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2193123,
+                    17.774894
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1247537981",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3114922,
+                    17.7277225
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1249191318",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2426673,
+                    17.7409458
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262057188",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2709828,
+                    17.7350082
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262057192",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2723946,
+                    17.7344971
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262057193",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2775649,
+                    17.7326048
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262057194",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2875824,
+                    17.719856
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262057201",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2869877,
+                    17.7210905
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262057202",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2890184,
+                    17.7179381
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262057203",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2891582,
+                    17.718008
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262057204",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2087986,
+                    17.8063484
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252856",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2086277,
+                    17.8063864
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252857",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2075927,
+                    17.8109379
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252858",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2071109,
+                    17.8121781
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252859",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.210527,
+                    17.7998298
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252860",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2107109,
+                    17.7986383
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252861",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.213042,
+                    17.7903514
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252862",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2127311,
+                    17.7909686
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252863",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2171469,
+                    17.7692617
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252865",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2170194,
+                    17.7683186
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252866",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2176993,
+                    17.7527567
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252867",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2178854,
+                    17.7511022
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252869",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2188403,
+                    17.7492855
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252870",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2279928,
+                    17.7441288
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252871",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2288358,
+                    17.7438496
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252872",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2329075,
+                    17.7435317
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252873",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2377656,
+                    17.7420038
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252874",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2380732,
+                    17.7418338
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252875",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2267163,
+                    17.77434
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252876",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2283235,
+                    17.7740598
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252877",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2329762,
+                    17.7722762
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252878",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2346938,
+                    17.771862
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1262252879",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3158941,
+                    17.7307714
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1263821791",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3180613,
+                    17.7112026
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1264634809",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3181672,
+                    17.7112235
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1264634810",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3182703,
+                    17.7112696
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1264634811",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3183594,
+                    17.7113259
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1264634812",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3184258,
+                    17.7114079
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1264634813",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2907272,
+                    17.722847
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1265069470",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3315659,
+                    17.7182923
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1265186467",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3314682,
+                    17.7182417
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1265186468",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3060867,
+                    17.7619799
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1266360182",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3219486,
+                    17.7591485
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1266360192",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.320026,
+                    17.7597021
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1266360193",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3079235,
+                    17.7240736
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1270688765",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.3388513,
+                    17.7261055
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1272460945",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2725209,
+                    17.7763108
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1276716474",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2813837,
+                    17.7704437
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1276716477",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.2870857,
+                    17.7667901
+                ]
+            },
+            "properties": {
+                "id": "osm-way-1276716478",
+                "name": "Unnamed shelter",
+                "type": "shelter",
+                "source": "OpenStreetMap",
+                "verified": false,
+                "last_verified": null
+            }
+        }
+    ]
+}

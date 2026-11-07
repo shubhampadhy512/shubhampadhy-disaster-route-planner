@@ -18,5 +18,15 @@
             82.5,
             17.0
         ]
+    },
+    {
+        "state": "visakhapatnam_area",
+        "file": "/shelters/shelters.osm.geojson",
+        "bbox": [
+            83.0,
+            17.5,
+            83.9,
+            18.2
+        ]
     }
 ]

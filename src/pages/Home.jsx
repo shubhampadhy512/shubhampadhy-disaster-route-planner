@@ -52,6 +52,7 @@ export default function Home() {
   const [selectedId, setSelectedId] = useState(null);
   const [routeInfo, setRouteInfo] = useState(null);
   const [shelterFocus, setShelterFocus] = useState(0); // goes up each time the Shelters tab is clicked
+  const [mapFocus, setMapFocus] = useState(0);
 
   // Load alerts now, then again every 5 minutes
   useEffect(() => {
@@ -103,7 +104,21 @@ export default function Home() {
 
   // NEW: alert shapes for the map (from server.mjs "geojson" field)
   const alertGeo = payload?.geojson ?? null;
-  const shapeCount = alertGeo?.features?.length ?? 0;
+  const { shapeCount, approximateAlertCount, unmappedAlertCount } = useMemo(() => {
+    const features = alertGeo?.features ?? [];
+    const mappedIds = new Set(features.map((feature) => feature.properties?.id).filter(Boolean));
+    const approximateIds = new Set(
+      features
+        .filter((feature) => feature.properties?.approximate)
+        .map((feature) => feature.properties?.id)
+        .filter(Boolean)
+    );
+    return {
+      shapeCount: features.length,
+      approximateAlertCount: approximateIds.size,
+      unmappedAlertCount: alerts.filter((alert) => !mappedIds.has(alert.id)).length,
+    };
+  }, [alerts, alertGeo]);
 
   // Nearest shelters are worked out on the user's device; location is never sent anywhere
   // CHANGED: the map gets ALL shelters; the list and route only use those within 50 km
@@ -138,6 +153,7 @@ export default function Home() {
     event.preventDefault();
     setActiveTab(tab.key);
     if (tab.key === 'shelters') setShelterFocus((n) => n + 1);
+    if (tab.key === 'map') setMapFocus((n) => n + 1);
     if (tab.target) {
       document.getElementById(tab.target)?.scrollIntoView({ behavior: 'smooth' });
     }
@@ -189,7 +205,7 @@ export default function Home() {
               <WeatherCard onLocation={setLocation} />
 
               {/* ---------- Live alerts ---------- */}
-              <div className="alert-content live-panel">
+              <div id="dashboard-alerts" className="alert-content live-panel">
                 <h2>Active alerts</h2>
 
                 {alertsError && (
@@ -214,8 +230,10 @@ export default function Home() {
                 {payload && (
                   <p className="live-note">
                     {shapeCount > 0
-                      ? 'Alert areas are drawn on the map where the source provides a shape. Some alerts only have a text area.'
-                      : 'No alert shapes are available for the map right now. Read the alert text below.'}
+                      ? approximateAlertCount > 0
+                        ? `${approximateAlertCount} alerts use approximate state-level markers; these do not show the affected district. Exact boundaries are shown when the source provides them.`
+                        : 'Alert areas are drawn on the map where the source provides boundaries. Some alerts only have a text area.'
+                      : 'No alert map locations are available right now. Read the alert text below.'}
                   </p>
                 )}
 
@@ -317,6 +335,7 @@ export default function Home() {
                     key={tab.key}
                     href={tab.target ? `#${tab.target}` : '#'}
                     className={`nav-link${activeTab === tab.key ? ' active' : ''}`}
+                    aria-current={activeTab === tab.key ? 'true' : undefined}
                     onClick={(e) => handleTabClick(e, tab)}
                   >
                     <i className={`fas ${tab.icon}`}></i>
@@ -334,7 +353,23 @@ export default function Home() {
                   alertGeo={alertGeo}
                   nearbyShelters={nearbyShelters}
                   shelterFocus={shelterFocus}
+                  mapFocus={mapFocus}
                 />
+                {alerts.length > 0 && (approximateAlertCount > 0 || unmappedAlertCount > 0) && (
+                  <div className="home-map-alert-notice" role="status" aria-live="polite">
+                    <i className="fas fa-triangle-exclamation" aria-hidden="true"></i>
+                    <div className="home-map-alert-copy">
+                      <strong>{alerts.length} active alerts</strong>
+                      <span>
+                        {approximateAlertCount > 0 &&
+                          `${approximateAlertCount} are approximate state-level markers. `}
+                        {unmappedAlertCount > 0 &&
+                          `${unmappedAlertCount} can't be placed because the feed doesn't identify a state or provide boundaries.`}
+                      </span>
+                    </div>
+                    <a href="#dashboard-alerts">View alerts</a>
+                  </div>
+                )}
                 <div className="home-map-note">
                   <i className="fas fa-location-dot" aria-hidden="true"></i>
                   <span>Your location only appears here when you allow browser access.</span>

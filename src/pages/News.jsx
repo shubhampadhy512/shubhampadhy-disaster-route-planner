@@ -91,12 +91,11 @@ export default function News() {
             {status === 'ready' &&
               articles.map((article) => (
                 <article className="news-card" key={article.article_id || article.link}>
-                  <h3>
-                    <a href={article.link} target="_blank" rel="noopener noreferrer">
-                      {article.title}
-                    </a>
-                  </h3>
-                  <p>{article.description || ''}</p>
+                <div className="news-card-meta">
+                  <span className="news-category">
+                    <i className="fas fa-bolt" aria-hidden="true"></i>
+                    {article.category?.[0] || 'Disaster update'}
+                  </span>
                   <time dateTime={article.pubDate}>
                     {new Date(article.pubDate).toLocaleDateString('en-IN', {
                       day: 'numeric',
@@ -104,8 +103,31 @@ export default function News() {
                       year: 'numeric',
                     })}
                   </time>
-                </article>
-              ))}
+                </div>
+                <h3>
+                  <a href={article.link} target="_blank" rel="noopener noreferrer">
+                    {article.title}
+                  </a>
+                </h3>
+                <p>{article.description || ''}</p>
+                <div className="news-card-footer">
+                  <span className="news-source">
+                    <i className="fas fa-newspaper" aria-hidden="true"></i>
+                    {article.source_name || article.source_id || 'News source'}
+                  </span>
+                  <a
+                    className="news-read-link"
+                    href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Read article: ${article.title}`}
+                  >
+                    Read story
+                    <i className="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
       </div>

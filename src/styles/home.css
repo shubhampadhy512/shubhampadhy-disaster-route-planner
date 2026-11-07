@@ -380,6 +380,64 @@
         color: var(--accent-color);
     }
 
+    .home-map-alert-notice {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 401;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.65rem;
+        width: min(350px, calc(100% - 24px));
+        padding: 0.75rem 0.85rem;
+        border: 1px solid #f1c27d;
+        border-left: 4px solid #c2570c;
+        border-radius: 10px;
+        background: var(--map-overlay-bg);
+        color: var(--text-primary);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+        box-sizing: border-box;
+    }
+
+    .home-map-alert-notice > i {
+        margin-top: 0.15rem;
+        color: #c2570c;
+    }
+
+    .home-map-alert-copy {
+        display: grid;
+        min-width: 0;
+        gap: 0.2rem;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .home-map-alert-copy span {
+        color: var(--text-secondary);
+    }
+
+    .home-map-alert-notice a {
+        flex: 0 0 auto;
+        color: var(--accent-color);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-underline-offset: 3px;
+    }
+
+    .home-map-alert-notice a:focus-visible {
+        outline: 3px solid var(--accent-color);
+        outline-offset: 2px;
+    }
+
+    @media (max-width: 600px) {
+        .home-map-alert-notice {
+            top: 76px;
+            left: 12px;
+            right: auto;
+            width: min(350px, calc(100% - 24px));
+        }
+    }
+
     .home-safety-guides {
         margin-top: 2rem;
         padding: clamp(1.25rem, 3vw, 2rem);

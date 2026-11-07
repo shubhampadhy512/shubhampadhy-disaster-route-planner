@@ -60,6 +60,10 @@ const lgDot = (bg, size, content = '') =>
   `font-size:12px;line-height:1;">${content}</span>`;
 const lgLine = (dashed) =>
   `<span style="display:inline-block;width:30px;border-top:4px ${dashed ? 'dashed' : 'solid'} #1f6f8b;"></span>`;
+const lgShelter = (size) =>
+  `<span style="display:inline-flex;align-items:center;justify-content:center;width:${size}px;height:${size}px;` +
+  `border-radius:50%;background:#2f7d4f;color:#fff;font-size:${Math.round(size * 0.55)}px;` +
+  `box-shadow:0 0 0 2px #fff,0 1px 4px rgba(0,0,0,.4);"><i class="fas fa-house-medical"></i></span>`;
 
 const LEGEND_ROWS = [
   ['Alerts (click a symbol for details)'],
@@ -74,8 +78,8 @@ const LEGEND_ROWS = [
   [lgDot('#ca8a04', 16), 'Yellow: Moderate'],
   [lgDot('#2563eb', 16), 'Blue: other / unknown'],
   ['Shelters and routes'],
-  [lgDot('#2f7d4f', 14), 'Shelter (unverified, incomplete)'],
-  [lgDot('#2f7d4f', 22), 'Selected shelter'],
+  [lgShelter(18), 'Shelter (unverified, incomplete)'],
+  [lgShelter(24), 'Selected shelter'],
   [lgLine(false), 'Road route to selected shelter'],
   [lgLine(true), 'Direction only, no road route'],
   ['You'],
@@ -111,6 +115,7 @@ export default function MapView({
   alertGeo,
   nearbyShelters, // NEW: shelters within 50 km (used for the Shelters button)
   shelterFocus, // NEW: number that goes up each time the Shelters button is clicked
+  mapFocus, // Reset the map view when the Interactive Map button is clicked
 }) {
   const containerRef = useRef(null);
   const mapRef = useRef(null);
@@ -139,6 +144,7 @@ export default function MapView({
     // Own layers (panes) so shelters are never hidden under alert shapes
     map.createPane('alertPane').style.zIndex = 410;
     map.createPane('shelterPane').style.zIndex = 450;
+    map.createPane('alertMarkerPane').style.zIndex = 650;
     alertLayerRef.current = L.layerGroup().addTo(map);
     highlightLayerRef.current = L.layerGroup().addTo(map);
     shelterLayerRef.current = L.layerGroup().addTo(map);
@@ -176,39 +182,61 @@ export default function MapView({
     hl.clearLayers();
     if (!alertGeo?.features?.length) return;
 
-    const byId = new Map();
+    const groups = new Map();
     alertGeo.features.forEach((f, i) => {
-      const id = f.properties?.id ?? `x${i}`;
-      if (!byId.has(id)) byId.set(id, []);
-      byId.get(id).push(f);
+      const p = f.properties || {};
+      const key = p.approximate
+        ? `state:${p.locationName}`
+        : `alert:${p.id ?? `x${i}`}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(f);
     });
 
-    byId.forEach((feats) => {
+    groups.forEach((feats) => {
       const p = feats[0].properties || {};
+      const severityOrder = { Extreme: 0, Severe: 1, Moderate: 2, Minor: 3 };
+      const mostSevere = feats
+        .map((feature) => feature.properties || {})
+        .sort((a, b) => (severityOrder[a.severity] ?? 9) - (severityOrder[b.severity] ?? 9))[0];
+      const countBadge = p.approximate && feats.length > 1
+        ? `<span style="position:absolute;right:-5px;top:-5px;min-width:16px;height:16px;` +
+          `padding:0 2px;border-radius:9px;background:#1f2937;color:#fff;font:bold 10px/16px sans-serif;` +
+          `text-align:center;box-shadow:0 0 0 1px #fff;">${feats.length}</span>`
+        : '';
       const color = sevColor(p.severity);
       const icon = L.divIcon({
         className: '',
         iconSize: [32, 32],
         iconAnchor: [16, 16],
         html:
-          `<div style="width:30px;height:30px;border-radius:50%;background:${color};` +
+          `<div style="position:relative;width:30px;height:30px;border-radius:50%;background:${sevColor(mostSevere.severity)};` +
           `border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.5);display:flex;` +
-          `align-items:center;justify-content:center;font-size:16px;">${alertEmoji(p.event)}</div>`,
+          `align-items:center;justify-content:center;font-size:16px;">${alertEmoji(mostSevere.event)}${countBadge}</div>`,
       });
+      const popupContent = p.approximate
+        ? `<b>${feats.length} approximate alert${feats.length === 1 ? '' : 's'} in ${esc(p.locationName)}</b>` +
+          `<br><small>State-level only; not the affected district or area boundary.</small>` +
+          `<ul style="padding-left:18px;margin:8px 0;">${feats.map((feature) => {
+            const alert = feature.properties || {};
+            return `<li><b>${esc(alert.event)}</b> (${esc(alert.severity)})` +
+              `<br>${esc(alert.areaDesc)}</li>`;
+          }).join('')}</ul>`
+        : `<b>${esc(p.event)}</b> (${esc(p.severity)})<br>${esc(p.areaDesc)}` +
+          `<br><small>From ${esc(p.sender)}</small>`;
       L.marker(bboxCenter(feats[0].geometry), {
         icon,
-        zIndexOffset: p.severity === 'Extreme' ? 1000 : p.severity === 'Severe' ? 500 : 0,
+        pane: 'alertMarkerPane',
+        zIndexOffset: mostSevere.severity === 'Extreme' ? 1000 : mostSevere.severity === 'Severe' ? 500 : 0,
       })
-        .bindPopup(
-          `<b>${esc(p.event)}</b> (${esc(p.severity)})<br>${esc(p.areaDesc)}` +
-          `<br><small>From ${esc(p.sender)}</small>`
-        )
+        .bindPopup(popupContent)
         .on('popupopen', () => {
           hl.clearLayers();
-          L.geoJSON(
-            { type: 'FeatureCollection', features: feats },
-            { pane: 'alertPane', style: { color, weight: 2, fillOpacity: 0.2 } }
-          ).addTo(hl);
+          if (!p.approximate) {
+            L.geoJSON(
+              { type: 'FeatureCollection', features: feats },
+              { pane: 'alertPane', style: { color, weight: 2, fillOpacity: 0.2 } }
+            ).addTo(hl);
+          }
         })
         .on('popupclose', () => hl.clearLayers())
         .addTo(layer);
@@ -244,7 +272,12 @@ export default function MapView({
     map.fitBounds(pts, { padding: [48, 48], maxZoom: 13 });
   }, [shelterFocus]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Draw shelters as green dots (the chosen one is bigger)
+  useEffect(() => {
+    if (!mapRef.current || !mapFocus) return;
+    mapRef.current.setView(INDIA_CENTER, START_ZOOM, { animate: true });
+  }, [mapFocus]);
+
+  // Draw shelters with a house symbol (the chosen one is bigger)
   useEffect(() => {
     const layer = shelterLayerRef.current;
     if (!layer) return;
@@ -253,13 +286,19 @@ export default function MapView({
     shelters?.features.forEach((f) => {
       const [lon, lat] = f.geometry.coordinates;
       const isSelected = selectedShelter?.id === f.properties.id;
-      L.circleMarker([lat, lon], {
+      const size = isSelected ? 38 : 30;
+      const icon = L.divIcon({
+        className: 'shelter-map-marker-wrap',
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2],
+        html:
+          `<span class="shelter-map-marker${isSelected ? ' is-selected' : ''}" ` +
+          `style="width:${size}px;height:${size}px"><i class="fas fa-house-medical" aria-hidden="true"></i></span>`,
+      });
+      L.marker([lat, lon], {
         pane: 'shelterPane',
-        radius: isSelected ? 11 : 7,
-        color: '#ffffff',
-        weight: 2,
-        fillColor: '#2f7d4f',
-        fillOpacity: 1,
+        icon,
+        keyboard: true,
       })
         .bindPopup(`<b>${esc(f.properties.name)}</b><br>${esc(f.properties.type)}`)
         .addTo(layer);
